@@ -1,0 +1,40 @@
+<mat-list>
+  <div mat-subheader>Orders</div>
+  <mat-list-item
+    *ngFor="let order of orders; let first = first"
+    class="order-item"
+    [class.last-order]="first"
+  >
+    <mat-list>
+      <div mat-subheader>Order Info</div>
+      <mat-list-item>
+        <mat-icon mat-list-icon>fastfood</mat-icon>
+        <div mat-line>Order ID: {{ order.order_id }}</div>
+        <div mat-line>Order Sum: {{ order.order_sum }} €</div>
+        <div mat-line>Order Time: {{ order.order_time }}</div>
+      </mat-list-item>
+    </mat-list>
+    <mat-list>
+      <div mat-subheader>Pizzas</div>
+      <mat-list-item *ngFor="let order_item of order.order_items">
+        <mat-icon mat-list-icon>local_pizza</mat-icon>
+        <div mat-line>{{ order_item.name }} ({{ order_item.quantity }} x)</div>
+        <div mat-line>{{ order_item.price }} €</div>
+        <div mat-line class="ingredients">
+          <span>with</span>
+          <span
+            *ngFor="
+              let ingredient of order_item.ingredients;
+              let last = last;
+              let i = index
+            "
+          >
+            <span *ngIf="!last">{{ " " + ingredient }}</span>
+            <span *ngIf="i < order_item.ingredients.length - 2">{{ "," }}</span>
+            <span *ngIf="last">{{ " and " + ingredient }}</span>
+          </span>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-list-item>
+</mat-list>

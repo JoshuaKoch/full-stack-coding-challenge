@@ -1,0 +1,15 @@
+.ingredients {
+  color: grey;
+}
+
+.add-to-cart {
+  margin-left: 20px;
+}
+.pizza-item {
+  width: 500px;
+}
+
+.headline-info {
+  margin: 20px 0px 0px 15px;
+  border-bottom: 1px solid black;
+}

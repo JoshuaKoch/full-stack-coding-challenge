@@ -1,30 +1,27 @@
-Frontend
-========
+# Frontend
 
-Prerequisites
--------------
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-* [Git](http://git-scm.com/)
-* [npm](https://www.npmjs.org/)
+## Development server
 
-Coding Language:
-* Javascript/Typescript (framework of your choice)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-* You can use any additional libraries you want.
+## Code scaffolding
 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Project description
--------------------
+## Build
 
-We want to develop a small web app that allows users to order pizza.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-This client will interface with the API built in the backend portion of the challenge.
+## Running unit tests
 
-First of all we'll display the list of pizzas with ingredients and prices. Data will be loaded from `/api/pizzas`.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-When the user chooses something from the list the order summary will update dynamically.
+## Running end-to-end tests
 
-There will be a button to confirm the order. An ajax call (POST) will be performed to `/api/orders` and the result will be displayed as a message like this: "Your order is confirmed. Order summary: ...".
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Optional:
-* Show all orders. Ajax call (GET) to `/api/orders`
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

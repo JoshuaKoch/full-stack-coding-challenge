@@ -1,0 +1,21 @@
+.cart-button {
+}
+
+.cart {
+  position: absolute;
+  width: 500px;
+  top: calc(100% + 5px);
+  right: 0;
+  z-index: 9;
+  background-color: #dcdcdc;
+  border-radius: 3px;
+}
+
+.cart-item-text {
+  text-align: left;
+}
+
+.ingredients {
+  color: grey;
+  text-align: left;
+}

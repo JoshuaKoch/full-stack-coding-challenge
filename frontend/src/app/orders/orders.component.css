@@ -1,0 +1,12 @@
+.order-item {
+  border-bottom: 1px solid #dcdcdc;
+  width: 100%;
+}
+
+.order-info {
+  margin-right: 10px;
+}
+
+.last-order {
+  background-color: #efefef;
+}

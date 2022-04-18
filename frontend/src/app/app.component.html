@@ -1,0 +1,25 @@
+<div class="main-header">
+  <div class="header-info-text">mediamanDE / full-stack-coding-challenge</div>
+  <app-cart></app-cart>
+</div>
+<div class="main-container">
+  <mat-list class="main-menu">
+    <div mat-subheader>Menu</div>
+    <mat-list-item>
+      <mat-icon mat-list-icon>shopping_cart</mat-icon>
+      <div mat-line>
+        <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>list</mat-icon>
+      <div mat-line>
+        <a routerLink="/orders" routerLinkActive="active">Orders</a>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="menu-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<h2 class="headline-info">
+  Please add the pizzas you want to order to the shopping cart by clicking the
+  plus button.
+</h2>
+<mat-list>
+  <div mat-subheader>Pizzas</div>
+  <mat-list-item *ngFor="let pizza of pizzas" class="pizza-item">
+    <mat-icon mat-list-icon>local_pizza</mat-icon>
+    <div mat-line>{{ pizza.name }}</div>
+    <div mat-line>{{ pizza.price }} €</div>
+    <div mat-line class="ingredients">
+      <span>with</span>
+      <span
+        *ngFor="
+          let ingredient of pizza.ingredients;
+          let last = last;
+          let i = index
+        "
+      >
+        <span *ngIf="!last">{{ " " + ingredient }}</span>
+        <span *ngIf="i < pizza.ingredients.length - 2">{{ "," }}</span>
+        <span *ngIf="last">{{ " and " + ingredient }}</span>
+      </span>
+    </div>
+    <button
+      mat-mini-fab
+      color="primary"
+      class="add-to-cart"
+      (click)="addItemToCart(pizza)"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

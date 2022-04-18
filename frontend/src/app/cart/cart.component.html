@@ -1,0 +1,53 @@
+<button
+  mat-mini-fab
+  color="accent"
+  class="cart-button"
+  matBadge="{{ cartItemCount }}"
+  matBadgePosition="before"
+  matBadgeColor="warn"
+  mat-raised-button
+  (click)="toggleCart()"
+>
+  <mat-icon>shopping_cart</mat-icon>
+  <mat-list class="cart" *ngIf="cartOpen" (click)="$event.stopPropagation()">
+    <div mat-subheader>Shopping cart</div>
+    <mat-list-item *ngFor="let pizza of pizzas; let j = index">
+      <mat-icon mat-list-icon>local_pizza</mat-icon>
+      <div class="cart-item-text" mat-line>{{ pizza.name }}</div>
+      <div class="cart-item-text" mat-line>{{ pizza.price }} €</div>
+      <div class="cart-item-text" mat-line class="ingredients">
+        <span>with</span>
+        <span
+          *ngFor="
+            let ingredient of pizza.ingredients;
+            let last = last;
+            let i = index
+          "
+        >
+          <span *ngIf="!last">{{ " " + ingredient }}</span>
+          <span *ngIf="i < pizza.ingredients.length - 2">{{ "," }}</span>
+          <span *ngIf="last">{{ " and " + ingredient }}</span>
+        </span>
+      </div>
+      <button
+        mat-mini-fab
+        color="warn"
+        class="add-to-cart"
+        (click)="removeItemFromCart(j); $event.stopPropagation()"
+      >
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-list-item>
+      <button
+        mat-raised-button
+        color="primary"
+        class="add-to-cart"
+        (click)="orderItemsFromCart()"
+        *ngIf="cartItemCount > 0"
+      >
+        order now ({{ cartPrice }} €)
+      </button>
+    </mat-list-item>
+  </mat-list>
+</button>
